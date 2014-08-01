@@ -11,7 +11,7 @@ module Toolbelt
     end
 
     def call
-      raise Toolbelt::OverrideInSubclassError
+      fail Toolbelt::OverrideInSubclassError
     end
   end
 end
