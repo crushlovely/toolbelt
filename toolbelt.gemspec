@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.authors     = ['PJ Kelly']
   spec.email       = ['pj@crushlovely.com']
   spec.homepage    = 'https://github.com/crushlovely/toolbelt'
-  spec.summary     = 'Utility to create signed URLs for uploading files straight to Amazon S3.'
-  spec.description = 'Utility to create signed URLs for uploading files straight to Amazon S3.'
+  spec.summary     = 'A collection of POROs to use in your applications.'
+  spec.description = 'A collection of POROs to use in your applications.'
 
   spec.rubyforge_project = 'toolbelt'
 
