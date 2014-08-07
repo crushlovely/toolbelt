@@ -7,5 +7,4 @@ rvm:
   - 2.1.1
 
 script:
-  - bundle exec rubocop
   - CODECLIMATE_REPO_TOKEN=2874a735738a5bd9b54d2a05acd81d988d54e3c68902282b1e316214489b2708 bundle exec rake
