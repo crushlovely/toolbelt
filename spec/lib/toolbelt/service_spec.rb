@@ -23,11 +23,8 @@ describe 'Toolbelt::Service' do
       end
     end
 
-    describe 'when called with missing required options' do
-      it 'raises an exception' do
-        expect { CreateWidget.call }
-          .to raise_error { Toolbelt::RequiredOptionsError }
-      end
+    it_behaves_like 'an object with required options' do
+      let(:callable) { CreateWidget.call }
     end
 
     describe 'when properly overriden from a subclass' do

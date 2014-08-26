@@ -1,10 +1,28 @@
 require 'spec_helper'
 
 describe 'Toolbelt::Policy' do
-  class ValidWidget < Toolbelt::Policy
+  class ValidWidgetPolicy < Toolbelt::Policy
     def pass?
       true
     end
+  end
+
+  class PassingStudentPolicy < Toolbelt::Policy
+    def pass?
+      true
+    end
+
+    protected
+
+    def required_options
+      {
+        :grade => 'required'
+      }
+    end
+  end
+
+  it_behaves_like 'an object with required options' do
+    let(:callable) { PassingStudentPolicy.pass? }
   end
 
   describe '.pass?' do
@@ -16,14 +34,14 @@ describe 'Toolbelt::Policy' do
     end
 
     describe 'when properly overriden from a subclass' do
-      subject { ValidWidget.pass? }
+      subject { ValidWidgetPolicy.pass? }
       it { should eq(true) }
     end
   end
 
   describe '.fail?' do
     describe 'when properly overriden from a subclass' do
-      let(:policy) { ValidWidget.new }
+      let(:policy) { ValidWidgetPolicy.new }
 
       it 'returns the opposite of #pass?' do
         expect(policy.fail?).to eq(!policy.pass?)

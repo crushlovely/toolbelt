@@ -1,5 +1,7 @@
 module Toolbelt
   class Policy
+    include Util::OptionValidator
+
     attr_reader :options
 
     def self.pass?(options = {})
@@ -11,6 +13,7 @@ module Toolbelt
     end
 
     def initialize(options = {})
+      validate_options!(options)
       @options = Hashie::Mash.new(options)
     end
 
