@@ -5,6 +5,7 @@ require 'hash_validator'
 require 'toolbelt/util/option_validator'
 require 'toolbelt/service'
 require 'toolbelt/policy'
+require 'toolbelt/presenter'
 
 module Toolbelt
   class ToolbeltError < StandardError
